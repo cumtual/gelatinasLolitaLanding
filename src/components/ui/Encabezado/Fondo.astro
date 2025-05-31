@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import encabezadoImg from "@assets/images/catedral.png";
+import CremitaEncabezado from "@assets/images/CremitaEncabezado.png";
+import styles from "./index.module.scss";
+import { Nubes } from "@components/svg";
+---
+
+<div class={styles.fondo}>
+    <div class={styles.titulo}>
+        <p>Gelatinas con tradición</p>
+    </div>
+    <div class={styles.contenedor_principal}>
+        <Image src={encabezadoImg} alt="Fondo" />
+        <div class={styles.contenido}>
+            <Image src={CremitaEncabezado} alt="Cremita Encabezado" />
+            <p>Con más de 50 años de experiencia llevando dulzura y estilo a tus eventos especiales.</p>
+        </div>
+    </div>
+    <div class={styles.nubes}>
+        <Nubes />
+    </div>
+</div>
