@@ -1,0 +1,11 @@
+@use '@styles/abstracts/colors' as *;
+
+.header {
+    background-color: $principal-100;
+    display: flex;
+    justify-content: center;
+    &__container {
+        color: $secondary-100;
+        padding: 1rem 0;
+    }
+}
