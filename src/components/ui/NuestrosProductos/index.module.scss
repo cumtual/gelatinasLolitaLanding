@@ -1,0 +1,47 @@
+@use '@styles/abstracts/colors' as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    .image_container {
+        width: 6.131rem;
+        height: 6.131rem;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    }
+    p{
+        font-weight: 500;
+        font-size: 1.48rem;
+        line-height: 130%;
+        color: $color-secondary-100;
+    }
+}
+.container_productos{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding:0 1.329rem;
+    margin-top: 3rem;
+    h2{
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 130%;
+        text-align: center;
+        color: $color-secondary-90;
+        margin-bottom: 1rem;
+    }
+    .productos{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}

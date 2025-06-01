@@ -1,0 +1,30 @@
+@use '@styles/abstracts/colors' as *;
+
+.ubicacion {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 3.4rem;
+
+    &__direccion {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+        margin-bottom: 0.4rem;
+
+        :global(svg) {
+            width: 1.4rem;
+            height: auto;
+        }
+    }
+
+    p {
+        font-size: 1.4rem;
+        color: $color-secondary-100;
+        text-align: center;
+    }
+    .ciudad{
+        margin-top: -.5rem;
+    }
+}
