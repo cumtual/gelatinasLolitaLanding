@@ -1,0 +1,11 @@
+---
+const { Icono, title } = Astro.props;
+import styles from "./index.module.scss";
+---
+
+<div class={styles.container}>
+    <div class={styles.image_container}>
+        <Icono />
+    </div>
+    <p>{title}</p>
+</div>

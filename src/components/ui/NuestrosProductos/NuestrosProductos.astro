@@ -1,0 +1,44 @@
+---
+import Producto from "./Producto.astro";
+import {
+  IconoPay,
+  IconoFlan,
+  IconoCremita,
+  IconoGelatina,
+  IconoCarlota,
+} from "@components/svg";
+const productos = [
+  {
+    icono: IconoPay,
+    title: "Pay",
+  },
+  {
+    icono: IconoFlan,
+    title: "Flan",
+  },
+  {
+    icono: IconoCremita,
+    title: "Cremita",
+  },
+  {
+    icono: IconoGelatina,
+    title: "Gelatina",
+  },
+  {
+    icono: IconoCarlota,
+    title: "Carlota",
+  },
+];
+import styles from "./index.module.scss";
+---
+
+<div class={styles.container_productos}>
+    <h2>Nuestros Productos</h2>
+  <div class={styles.productos}>
+    {
+      productos.map((producto) => (
+        <Producto Icono={producto.icono} title={producto.title} />
+      ))
+    }
+  </div>
+</div>
