@@ -6,5 +6,7 @@ import IconoFlan from './IconoFlan.astro';
 import IconoCremita from './IconoCremita.astro';
 import IconoGelatina from './IconoGelatina.astro';
 import IconoCarlota from './IconoCarlota.astro';
+import IconoTelefono from './IconoTelefono.astro';
+import LogoLolitaFooter from './LogoLolitaFooter.astro';
 
-export { LogoLolita, Nubes, IconoUbicacion, IconoPay, IconoFlan, IconoCremita, IconoGelatina, IconoCarlota };
+export { LogoLolita, Nubes, IconoUbicacion, IconoPay, IconoFlan, IconoCremita, IconoGelatina, IconoCarlota, IconoTelefono, LogoLolitaFooter };
