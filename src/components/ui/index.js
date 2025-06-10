@@ -1,6 +1,9 @@
 import { Header } from "./Header";
 import { Fondo } from "./Encabezado";
 import { Ubicacion } from "./Ubicacion";
-import { NuestrosProductos } from "./NuestrosProductos";
+import { NuestrosProductos } from "./NuestrosProductos";        
+import { SeccionFotos } from "./Carrusel";  
+import { ButtonOrdenar } from "./Button";
+import { Footer } from "./Footer";
 
-export { Header, Fondo, Ubicacion, NuestrosProductos };
+export { Header, Fondo, Ubicacion, NuestrosProductos, SeccionFotos, ButtonOrdenar, Footer };

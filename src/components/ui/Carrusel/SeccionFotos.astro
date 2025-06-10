@@ -1,0 +1,14 @@
+---
+import Carrusel from './Carrusel';
+import styles from './index.module.scss';
+const {images, nombre, texto} = Astro.props;
+---
+<div class={styles.seccionFotos}>
+    <div class={styles.seccionFotos__titulo}>
+        <p>{nombre}</p>
+        <p>{texto}</p>
+    </div>
+    <div class={styles.seccionFotos__carrusel}>
+        <Carrusel client:load images={images}/>
+    </div>
+</div>

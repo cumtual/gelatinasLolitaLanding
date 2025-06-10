@@ -1,0 +1,18 @@
+---
+import styles from './index.module.scss';
+import { LogoLolitaFooter } from '@/components/svg';
+import { Ubicacion } from '../Ubicacion';
+---
+<footer class={styles.footer}>
+    <div class={styles.footer__container}>
+        <div class={styles.footer__container__logo}>
+            <LogoLolitaFooter />
+        </div>
+        <div class={styles.footer__container__ubicacion}>
+            <Ubicacion />
+        </div>
+        <div class={styles.footer__container__redes}>
+            <a href="https://cumtual.com" target="_blank">powered by Cumtual</a>
+        </div>
+    </div>
+</footer>
