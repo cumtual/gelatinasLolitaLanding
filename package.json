@@ -6,12 +6,19 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "convert-images": "node scripts/convertToWebp.js"
   },
   "dependencies": {
-    "astro": "^5.8.1"
+    "@astrojs/react": "^4.3.0",
+    "@types/react": "^19.1.6",
+    "@types/react-dom": "^19.1.6",
+    "astro": "^5.8.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "sass": "^1.89.1"
+    "sass": "^1.89.1",
+    "sharp": "^0.33.2"
   }
 }
