@@ -1,5 +1,7 @@
 ---
 import Carrusel from './Carrusel';
+import { Swipper } from './Swipper';
+
 import styles from './index.module.scss';
 const {images, nombre, texto} = Astro.props;
 ---
@@ -9,6 +11,6 @@ const {images, nombre, texto} = Astro.props;
         <p>{texto}</p>
     </div>
     <div class={styles.seccionFotos__carrusel}>
-        <Carrusel client:load images={images}/>
+        <Swipper client:load images={images}/>
     </div>
 </div>

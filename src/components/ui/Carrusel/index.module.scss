@@ -373,3 +373,6 @@
   will-change: transform, opacity;
   -webkit-transform: translateZ(0); // activa aceleración por GPU en Safari
 }
+:global(.swiper-pagination-bullet-active){
+  background: #FFF !important;
+}
