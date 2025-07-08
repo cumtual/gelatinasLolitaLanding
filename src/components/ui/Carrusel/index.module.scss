@@ -1,5 +1,6 @@
 @use "@styles/abstracts/colors" as *;
 @use "@styles/abstracts/fonts" as *;
+@use "@styles/abstracts/breakpoints" as *;
 
 .seccionFotos {
   .seccionFotos__titulo {
@@ -53,7 +54,6 @@
       }
     }
 
-    
   }
 }
 
@@ -61,8 +61,7 @@
   background: #fff !important;
 }
 
-// Estilos responsivos para dispositivos móviles
-@media (max-width: 768px) {
+@include respond-to-max('tablet') {
   .seccionFotos {
     .seccionFotos__carrusel {
       :global(.swiper) {
@@ -73,12 +72,11 @@
         min-width: 400px;
         max-width: 450px;
       }
-
     }
   }
 }
 
-@media (max-width: 480px) {
+@include respond-to-max('mobile') {
   .seccionFotos {
     .seccionFotos__carrusel {
       :global(.swiper) {
@@ -86,7 +84,8 @@
       }
 
       :global(.swiper-slide-content) {
-        max-width: 300px;
+        min-width: 300px;
+        max-width: 350px;
       }
     }
   }
