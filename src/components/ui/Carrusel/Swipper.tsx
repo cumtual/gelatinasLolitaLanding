@@ -20,8 +20,9 @@ export const Swipper = ({ images, className }: SwipperProps) => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
-      spaceBetween={50}
+      spaceBetween={30}
       slidesPerView={1}
+      centeredSlides={true}
       navigation
       pagination={{ clickable: true }}
       autoplay={{
@@ -29,17 +30,30 @@ export const Swipper = ({ images, className }: SwipperProps) => {
         disableOnInteraction: false,
       }}
       breakpoints={{
-        640: {
-          slidesPerView: 2,
+        480: {
+          slidesPerView: 1.2,
           spaceBetween: 20,
+          centeredSlides: true,
+        },
+        640: {
+          slidesPerView: 1.5,
+          spaceBetween: 25,
+          centeredSlides: false,
         },
         768: {
-          slidesPerView: 3,
+          slidesPerView: 2,
           spaceBetween: 30,
+          centeredSlides: false,
         },
         1024: {
-          slidesPerView: 4,
+          slidesPerView: 2.5,
+          spaceBetween: 35,
+          centeredSlides: false,
+        },
+        1280: {
+          slidesPerView: 3,
           spaceBetween: 40,
+          centeredSlides: false,
         },
       }}
       className={className}
