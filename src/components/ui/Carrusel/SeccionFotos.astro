@@ -2,7 +2,30 @@
 import { Swipper } from './Swipper';
 
 import styles from './index.module.scss';
-const {images, nombre, texto} = Astro.props;
+import { Image } from 'astro:assets';
+const {images, nombre, texto, fondo} = Astro.props;
+
+// Lógica para organizar las imágenes según la cantidad
+const getLayoutClass = (imageCount: number) => {
+  switch (imageCount) {
+    case 6:
+      return styles.layout_2x3; // 2 filas de 3
+    case 4:
+      return styles.layout_2x2; // 2 filas de 2
+    case 3:
+      return styles.layout_1x3; // 1 fila de 3
+    case 2:
+      return styles.layout_1x2; // 1 fila de 2
+    default:
+      return styles.layout_flex; // Layout flexible por defecto
+  }
+};
+
+// Estilo de fondo condicional
+const backgroundStyle = fondo ? `background-image: url(${fondo.src})` : '';
+
+// Estilo de altura condicional
+const combinedStyle = `${backgroundStyle}`.trim();
 ---
 <div class={styles.seccionFotos}>
     <div class={styles.seccionFotos__titulo}>
@@ -11,5 +34,14 @@ const {images, nombre, texto} = Astro.props;
     </div>
     <div class={styles.seccionFotos__carrusel}>
         <Swipper client:load images={images}/>
+    </div>
+    <div class={styles.seccionFotos__tabletDesktop} style={combinedStyle}>
+        <div class={`${styles.seccionFotos__tabletDesktop__images} ${getLayoutClass(images.length)}`}>
+            {images.map((image: any, index: number) => (
+                <div class={styles.seccionFotos__tabletDesktop__image}>
+                    <Image src={image.src} alt={image.alt || `${nombre} ${texto} ${index}`} />
+                </div>
+            ))}
+        </div>
     </div>
 </div>
