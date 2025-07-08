@@ -53,7 +53,85 @@
         border-radius: 8px;
       }
     }
+  }
+  .seccionFotos__tabletDesktop {
+    display: none;
+    position: relative;
+    margin-top: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 4rem;
 
+    .seccionFotos__tabletDesktop__images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+
+      // Layout por defecto (flexible)
+      &.layout_flex {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      // Layout 2x3 (6 elementos)
+      &.layout_2x3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+
+      // Layout 2x2 (4 elementos)
+      &.layout_2x2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 70%;
+        margin: 0 auto;
+      }
+
+      // Layout 1x3 (3 elementos)
+      &.layout_1x3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        gap: 2rem;
+        max-width: 80%;
+        margin: 0 auto;
+      }
+
+      // Layout 1x2 (2 elementos)
+      &.layout_1x2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        gap: 2rem;
+        max-width: 60%;
+        margin: 0 auto;
+      }
+    }
+
+    .seccionFotos__tabletDesktop__image {
+      flex: 0 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        max-width: 20rem;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
   }
 }
 
@@ -61,7 +139,7 @@
   background: #fff !important;
 }
 
-@include respond-to-max('tablet') {
+@include respond-to-max("tablet") {
   .seccionFotos {
     .seccionFotos__carrusel {
       :global(.swiper) {
@@ -76,7 +154,7 @@
   }
 }
 
-@include respond-to-max('mobile') {
+@include respond-to-max("mobile") {
   .seccionFotos {
     .seccionFotos__carrusel {
       :global(.swiper) {
@@ -86,6 +164,118 @@
       :global(.swiper-slide-content) {
         min-width: 300px;
         max-width: 350px;
+      }
+    }
+  }
+}
+
+@include respond-to("tablet") {
+  .seccionFotos {
+    .seccionFotos__carrusel {
+      display: none;
+    }
+    .seccionFotos__tabletDesktop {
+      display: flex;
+      min-height: 4rem;
+
+      .seccionFotos__tabletDesktop__image {
+        img {
+          max-width: 18rem;
+        }
+      }
+
+      .seccionFotos__tabletDesktop__images {
+        &.layout_2x3 {
+          max-width: 95%;
+          gap: 1.5rem;
+        }
+
+        &.layout_2x2 {
+          max-width: 80%;
+          gap: 1.5rem;
+        }
+
+        &.layout_1x3 {
+          max-width: 90%;
+          gap: 1.5rem;
+        }
+
+        &.layout_1x2 {
+          max-width: 70%;
+          gap: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to("desktop") {
+  .seccionFotos {
+    .seccionFotos__tabletDesktop {
+      min-height: 60rem;
+
+      .seccionFotos__tabletDesktop__image {
+        img {
+          max-width: 22rem;
+        }
+      }
+
+      .seccionFotos__tabletDesktop__images {
+        &.layout_2x3 {
+          max-width: 90%;
+          gap: 2rem;
+        }
+
+        &.layout_2x2 {
+          max-width: 70%;
+          gap: 2rem;
+        }
+
+        &.layout_1x3 {
+          max-width: 80%;
+          gap: 2rem;
+        }
+
+        &.layout_1x2 {
+          max-width: 60%;
+          gap: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@include respond-to("desktop-large") {
+  .seccionFotos {
+    .seccionFotos__tabletDesktop {
+      min-height: 70rem;
+
+      .seccionFotos__tabletDesktop__image {
+        img {
+          max-width: 25rem;
+        }
+      }
+
+      .seccionFotos__tabletDesktop__images {
+        &.layout_2x3 {
+          max-width: 85%;
+          gap: 2.5rem;
+        }
+
+        &.layout_2x2 {
+          max-width: 65%;
+          gap: 2.5rem;
+        }
+
+        &.layout_1x3 {
+          max-width: 75%;
+          gap: 2.5rem;
+        }
+
+        &.layout_1x2 {
+          max-width: 55%;
+          gap: 2.5rem;
+        }
       }
     }
   }
