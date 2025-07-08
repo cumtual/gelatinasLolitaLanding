@@ -1,33 +1,93 @@
-@use '@styles/abstracts/colors' as *;
-@use '@styles/abstracts/fonts' as *;
+@use "@styles/abstracts/colors" as *;
+@use "@styles/abstracts/fonts" as *;
 
+.seccionFotos {
+  .seccionFotos__titulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    p:first-child {
+      font-family: $font-secondary;
+      font-weight: 300;
+      color: $color-secondary-90;
+      font-size: 2.3rem;
+      line-height: 117%;
+    }
+    p:last-child {
+      font-weight: 500;
+      color: $color-secondary-90;
+      font-size: 2rem;
+      line-height: 117%;
+    }
+  }
+  .seccionFotos__carrusel {
+    margin-top: 0.955rem;
+    width: 100%;
+    overflow: hidden;
 
-.seccionFotos{
-    .seccionFotos__titulo{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 5rem;
-        p:first-child{
-            font-family: $font-secondary;
-            font-weight: 300;
-            color: $color-secondary-90;
-            font-size: 2.3rem;
-            line-height: 117%;
-        }
-        p:last-child{
-            font-weight: 500;
-            color: $color-secondary-90;
-            font-size: 2rem;
-            line-height: 117%;
-        }
+    :global(.swiper) {
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
     }
-    .seccionFotos__carrusel{
-        margin-top: .955rem;
+
+    :global(.swiper-slide) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
+
+    :global(.swiper-slide-content) {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+    }
+
+    
+  }
 }
 
-:global(.swiper-pagination-bullet-active){
-  background: #FFF !important;
+:global(.swiper-pagination-bullet-active) {
+  background: #fff !important;
+}
+
+// Estilos responsivos para dispositivos móviles
+@media (max-width: 768px) {
+  .seccionFotos {
+    .seccionFotos__carrusel {
+      :global(.swiper) {
+        padding: 0 10px;
+      }
+
+      :global(.swiper-slide-content) {
+        min-width: 400px;
+        max-width: 450px;
+      }
+
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .seccionFotos {
+    .seccionFotos__carrusel {
+      :global(.swiper) {
+        padding: 0 5px;
+      }
+
+      :global(.swiper-slide-content) {
+        max-width: 300px;
+      }
+    }
+  }
 }
