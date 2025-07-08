@@ -7,39 +7,52 @@ import { GelatinaGrosellaImage, GelatinaNaranjaImage, GelatinaLimonImage, Gelati
 import { GelatinaVainillaImage, GelatinaChocolateImage, GelatinaMelonImage, GelatinaMosaico } from '@assets/images/gelatinasLeche';
 import { CarlotaCafeImage, CarlotaFresaImage, CarlotaLimonImage } from '@assets/images/carlotas';
 import { FlanSencilloImage, FlanNapolitanoImage } from '@assets/images/flanes';
+import CotizaTusEventosImage from '@/assets/images/CotizaTusEventos.png';
+import CremitaImage from '@/assets/images/Cremita.png';
+import PayImage from '@/assets/images/Pay.png';
+import CatedralLolitaImage from '@/assets/images/CatedralLogo.png';
+import DeTemporadaImage from '@/assets/images/DeTemporada.png';
+import styles from '@/styles/pages/index.module.scss';
+
+// Fondo por defecto para todas las secciones
+import {FondoGelatinaCombinadaImage} from '@/assets/images/gelatinasCombinadas';
+import {FondoGelatinasAgua} from '@/assets/images/gelatinasAgua';
+import {FondoGelatinasLeche} from '@/assets/images/gelatinasLeche';
+import {FondoCarlotas} from '@/assets/images/carlotas';
+import {FondoFlanes} from '@/assets/images/flanes';
 const imagesGelatinasCombinadas = [
     {
-      src: ChocolateGrosellaImage.src || ChocolateGrosellaImage,
+      src: ChocolateGrosellaImage,
       alt: "Gelatina de Chocolate y Grosella",
       title: "Chocolate y Grosella",
       description: "La combinación perfecta de sabores"
     },
     {
-      src: VainillaGrosellaImage.src || VainillaGrosellaImage,
+      src: VainillaGrosellaImage,
       alt: "Gelatina de Vainilla y Grosella",
       title: "Vainilla y Grosella",
       description: "Dulzura y frescura en cada bocado"
     },
     {
-      src: VainillaNaranjaImage.src || VainillaNaranjaImage,
+      src: VainillaNaranjaImage,
       alt: "Gelatina de Vainilla y Naranja",
       title: "Vainilla y Naranja",
       description: "Sabores cítricos que refrescan"
     },
     {
-      src: VainillaLimonImage.src || VainillaLimonImage,
+      src: VainillaLimonImage,
       alt: "Gelatina de Vainilla y Limón",
       title: "Vainilla y Limón",
       description: "El toque ácido que necesitas"
     },
     {
-      src: VainillaJerezImage.src || VainillaJerezImage,
+      src: VainillaJerezImage,
       alt: "Gelatina de Vainilla y Jerez",
       title: "Vainilla y Jerez",
       description: "Sabor sofisticado y elegante"
     },
     {
-      src: ChocolateJerezImage.src || ChocolateJerezImage,
+      src: ChocolateJerezImage,
       alt: "Gelatina de Chocolate y Jerez",
       title: "Chocolate y Jerez",
       description: "Una combinación única y deliciosa"
@@ -47,25 +60,25 @@ const imagesGelatinasCombinadas = [
   ]
 const imagesGelatinasAgua = [
     {
-      src: GelatinaGrosellaImage.src || GelatinaGrosellaImage,
+      src: GelatinaGrosellaImage,
       alt: "Gelatina de Grosella",
       title: "Grosella",
       description: "La combinación perfecta de sabores"
     },
     {
-      src: GelatinaNaranjaImage.src || GelatinaNaranjaImage,
+      src: GelatinaNaranjaImage,
       alt: "Gelatina de Naranja",
       title: "Naranja",
       description: "La combinación perfecta de sabores"
     },
     {
-      src: GelatinaLimonImage.src || GelatinaLimonImage,
+      src: GelatinaLimonImage,
       alt: "Gelatina de Limón",
       title: "Limón",
       description: "La combinación perfecta de sabores"
     },
     {
-      src: GelatinaJerezImage.src || GelatinaJerezImage,
+      src: GelatinaJerezImage,
       alt: "Gelatina de Jerez",
       title: "Jerez",
       description: "La combinación perfecta de sabores"
@@ -73,25 +86,25 @@ const imagesGelatinasAgua = [
   ]
 const imagesGelatinasLeche = [
     {
-      src: GelatinaVainillaImage.src || GelatinaVainillaImage,
+      src: GelatinaVainillaImage,
       alt: "Gelatina de Vainilla",
       title: "Vainilla",
       description: "La combinación perfecta de sabores"
     },
 	{
-		src: GelatinaMelonImage.src || GelatinaMelonImage,
+		src: GelatinaMelonImage,
 		alt: "Gelatina de Melón",
 		title: "Melón",
 		description: "La combinación perfecta de sabores"
 	},
     {
-      src: GelatinaChocolateImage.src || GelatinaChocolateImage,
+      src: GelatinaChocolateImage,
       alt: "Gelatina de Chocolate",
       title: "Chocolate",
       description: "La combinación perfecta de sabores"
     },
 	{
-		src: GelatinaMosaico.src || GelatinaMosaico,
+		src: GelatinaMosaico,
 		alt: "Gelatina Mosaico",
 		title: "Mosaico",
 		description: "La combinación perfecta de sabores"
@@ -99,19 +112,19 @@ const imagesGelatinasLeche = [
   ]
 const imagesCarlotas = [
     {
-      src: CarlotaCafeImage.src || CarlotaCafeImage,
+      src: CarlotaCafeImage,
       alt: "Carlota de Café",
       title: "Café",
       description: "La combinación perfecta de sabores"
     },
 	{
-		src: CarlotaFresaImage.src || CarlotaFresaImage,
+		src: CarlotaFresaImage,
 		alt: "Carlota de Fresa",
 		title: "Fresa",
 		description: "La combinación perfecta de sabores"
 	},
 	{
-		src: CarlotaLimonImage.src || CarlotaLimonImage,
+		src: CarlotaLimonImage,
 		alt: "Carlota de Limón",
 		title: "Limón",
 		description: "La combinación perfecta de sabores"
@@ -119,24 +132,18 @@ const imagesCarlotas = [
   ]
 const imagesFlanes = [
     {
-      src: FlanSencilloImage.src || FlanSencilloImage,
+      src: FlanSencilloImage,
       alt: "Flan Sencillo",
       title: "Sencillo",
       description: "La combinación perfecta de sabores"
     },
 	{
-		src: FlanNapolitanoImage.src || FlanNapolitanoImage,
+		src: FlanNapolitanoImage,
 		alt: "Flan Napolitano",
 		title: "Napolitano",
 		description: "La combinación perfecta de sabores"
     }
   ]
-import CotizaTusEventosImage from '@/assets/images/CotizaTusEventos.png';
-import CremitaImage from '@/assets/images/Cremita.png';
-import PayImage from '@/assets/images/Pay.png';
-import CatedralLolitaImage from '@/assets/images/CatedralLogo.png';
-import DeTemporadaImage from '@/assets/images/DeTemporada.png';
-import styles from '@/styles/pages/index.module.scss'
 
 ---
 
@@ -156,13 +163,13 @@ import styles from '@/styles/pages/index.module.scss'
 		</div>
 		<NuestrosProductos />
 		<div id="GelatinasCombinadas">
-			<SeccionFotos images={imagesGelatinasCombinadas} nombre="Gelatinas" texto="combinadas"/>
+			<SeccionFotos images={imagesGelatinasCombinadas} nombre="Gelatinas" texto="combinadas" fondo={FondoGelatinaCombinadaImage}/>
 		</div>
 		<div class={styles.buttonOrdenarContainer}>
 			<ButtonOrdenar />
 		</div>
 		<div id="GelatinasAgua">
-			<SeccionFotos images={imagesGelatinasAgua} nombre="Gelatinas" texto="de agua"/>
+			<SeccionFotos images={imagesGelatinasAgua} nombre="Gelatinas" texto="de agua" fondo={FondoGelatinasAgua}/>
 		</div>
 		<div class={styles.imagenesPrincipalesContainer}>
 			<Image src={CotizaTusEventosImage} alt="Cotiza tus eventos" />
@@ -171,7 +178,7 @@ import styles from '@/styles/pages/index.module.scss'
 			<ButtonOrdenar />
 		</div>
 		<div id="GelatinasLeche">
-			<SeccionFotos images={imagesGelatinasLeche} nombre="Gelatinas" texto="de leche"/>
+			<SeccionFotos images={imagesGelatinasLeche} nombre="Gelatinas" texto="de leche" fondo={FondoGelatinasLeche}/>
 		</div>
 		<div class={styles.imagenesPrincipalesContainer}>
 			<p>Cremita</p>
@@ -187,13 +194,13 @@ import styles from '@/styles/pages/index.module.scss'
 			<Ubicacion />
 		</div>
 		<div id="Carlotas">
-			<SeccionFotos images={imagesCarlotas} nombre="Carlotas"/>
+			<SeccionFotos images={imagesCarlotas} nombre="Carlotas" fondo={FondoCarlotas} />
 		</div>
 		<div class={styles.buttonOrdenarContainer}>
 			<ButtonOrdenar />
 		</div>
 		<div id="Flanes">
-			<SeccionFotos images={imagesFlanes} nombre="Flanes"/>
+			<SeccionFotos images={imagesFlanes} nombre="Flanes" fondo={FondoFlanes}/>
 		</div>
 		<div class={styles.imagenesPrincipalesContainer}>
 			<p>Pay</p>
