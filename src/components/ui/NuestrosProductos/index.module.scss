@@ -1,4 +1,5 @@
 @use '@styles/abstracts/colors' as *;
+@use '@styles/abstracts/breakpoints' as *;
 
 .container {
     display: flex;
@@ -43,5 +44,14 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+    }
+}
+
+@include respond-to('tablet'){
+    .container_productos{
+        .productos{
+            margin-top: 1.3rem;
+            padding: 0 25%;
+        }
     }
 }
