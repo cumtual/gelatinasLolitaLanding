@@ -4,8 +4,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-interface ImageData {
-  src: string;
+export interface ImageData {
+  src: any; // Cambiado a any para manejar imágenes importadas de Astro
   alt: string;
   title: string;
   description: string;
@@ -62,7 +62,7 @@ export const Swipper = ({ images, className }: SwipperProps) => {
         <SwiperSlide key={index}>
           <div className="swiper-slide-content">
             <img 
-              src={image.src} 
+              src={typeof image.src === 'string' ? image.src : image.src.src || image.src} 
               alt={image.alt}
             />
           </div>
