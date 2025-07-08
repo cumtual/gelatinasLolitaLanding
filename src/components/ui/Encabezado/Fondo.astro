@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import encabezadoImg from "@assets/images/catedral.png";
+import encabezadoDesktopImg from "@assets/images/CatedralTablet.png";
 import CremitaEncabezado from "@assets/images/CremitaEncabezado.png";
 import styles from "./index.module.scss";
 import { Nubes } from "@components/svg";
@@ -11,7 +12,16 @@ import { Nubes } from "@components/svg";
         <p>Gelatinas con tradición</p>
     </div>
     <div class={styles.contenedor_principal}>
-        <Image src={encabezadoImg} alt="Fondo" />
+        <Image 
+            src={encabezadoImg} 
+            alt="Fondo móvil" 
+            class={styles.fondo_imagen_mobile}
+        />
+        <Image 
+            src={encabezadoDesktopImg} 
+            alt="Fondo desktop" 
+            class={styles.fondo_imagen_desktop}
+        />
         <div class={styles.contenido}>
             <Image src={CremitaEncabezado} alt="Cremita Encabezado" />
             <p>Con más de 50 años de experiencia llevando dulzura y estilo a tus eventos especiales.</p>

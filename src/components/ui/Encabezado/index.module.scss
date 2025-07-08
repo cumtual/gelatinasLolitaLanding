@@ -38,13 +38,26 @@
             z-index: 0;
         }
 
-        > img {
+        .fondo_imagen_mobile {
             position: absolute;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             z-index: 1;
             filter: blur(1.5px);
+            display: block;
+        }
+
+        .fondo_imagen_desktop {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+            filter: blur(1.5px);
+            display: none;
         }
 
         .contenido {
@@ -80,6 +93,44 @@
             display: block;
         }
     }
+    @include respond-to('tablet') {
+
+        .titulo{
+            position: absolute;
+            z-index: 10;
+            p{
+                margin-top: 4.519rem;
+                font-size: 4.356rem;
+                text-shadow: 0px 4px 4px #00000099;
+            }
+        }
+
+        .contenedor_principal{
+            .contenido{
+                max-width: 50rem;
+                margin-top: 13.2rem;
+                p{
+                    margin-top: 1rem;
+                    font-size: 2.2rem;
+                }
+            }
+        }
+
+        .nubes{
+            bottom: -3rem;
+        }
+
+        .contenedor_principal {
+            .fondo_imagen_mobile {
+                display: none;
+            }
+
+            .fondo_imagen_desktop {
+                display: block;
+            }
+        }
+    }
+    
     @include respond-to-max('tablet') {
         .nubes{
             bottom: -4px;
