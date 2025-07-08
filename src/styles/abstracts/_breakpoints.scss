@@ -1,0 +1,104 @@
+// Breakpoints para diferentes tamaños de pantalla
+$breakpoints: (
+  'mobile-small': 320px,
+  'mobile': 480px,
+  'tablet': 768px,
+  'tablet-large': 1024px,
+  'desktop': 1280px,
+  'desktop-large': 1440px,
+  'desktop-xl': 1920px
+);
+
+// Mixin para media queries
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "No se encontró el breakpoint '#{$breakpoint}' en $breakpoints.";
+  }
+}
+
+// Mixin para media queries con max-width
+@mixin respond-to-max($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $max-width: map-get($breakpoints, $breakpoint) - 1px;
+    @media (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @warn "No se encontró el breakpoint '#{$breakpoint}' en $breakpoints.";
+  }
+}
+
+// Mixin para media queries con rango específico
+@mixin respond-to-range($min-breakpoint, $max-breakpoint) {
+  @if map-has-key($breakpoints, $min-breakpoint) and map-has-key($breakpoints, $max-breakpoint) {
+    $max-width: map-get($breakpoints, $max-breakpoint) - 1px;
+    @media (min-width: map-get($breakpoints, $min-breakpoint)) and (max-width: $max-width) {
+      @content;
+    }
+  } @else {
+    @warn "No se encontró uno o ambos breakpoints '#{$min-breakpoint}' o '#{$max-breakpoint}' en $breakpoints.";
+  }
+}
+
+// Mixins específicos para orientación
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin portrait {
+  @media (orientation: portrait) {
+    @content;
+  }
+}
+
+// Mixins específicos para densidad de píxeles
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+// Mixins para dispositivos específicos
+@mixin mobile-only {
+  $max-width: map-get($breakpoints, 'tablet') - 1px;
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @include respond-to-range('tablet', 'tablet-large');
+}
+
+@mixin desktop-only {
+  @include respond-to('desktop');
+}
+
+// Mixins para hover (solo en dispositivos que lo soporten)
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+// Mixins para dispositivos táctiles
+@mixin touch {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}
+
+// Variables de breakpoints para uso directo
+$mobile-small: map-get($breakpoints, 'mobile-small');
+$mobile: map-get($breakpoints, 'mobile');
+$tablet: map-get($breakpoints, 'tablet');
+$tablet-large: map-get($breakpoints, 'tablet-large');
+$desktop: map-get($breakpoints, 'desktop');
+$desktop-large: map-get($breakpoints, 'desktop-large');
+$desktop-xl: map-get($breakpoints, 'desktop-xl');
