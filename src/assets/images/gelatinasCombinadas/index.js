@@ -7,6 +7,8 @@ import VainillaNaranjaImage from './VainillaNaranja.png';
 import VainillaLimonImage from './VainillaLimon.png';
 import VainillaJerezImage from './VainillaJerez.png';
 import ChocolateJerezImage from './ChocolateJerez.png';
+import FondoGelatinaCombinadaImage from './FondoGelatinasCombinadas.png';
+
 
 export {
   ChocolateGrosellaImage,
@@ -14,5 +16,6 @@ export {
   VainillaNaranjaImage,
   VainillaLimonImage,
   VainillaJerezImage,
-  ChocolateJerezImage
+  ChocolateJerezImage,
+  FondoGelatinaCombinadaImage,
 };
