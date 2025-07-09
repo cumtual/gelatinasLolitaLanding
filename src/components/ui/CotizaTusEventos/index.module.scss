@@ -1,0 +1,70 @@
+@use "@styles/abstracts/colors" as *;
+@use "@styles/abstracts/fonts" as *;
+@use "@styles/abstracts/breakpoints" as *;
+
+.imagenesPrincipalesContainer {
+  margin-top: 5rem;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  p {
+    font-family: $font-secondary;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 104%;
+    color: $color-secondary-90;
+    text-align: center;
+  }
+  .cremitaImage {
+    margin-top: 1rem;
+  }
+}
+
+.imagenesPrincipalesContainerDesktop {
+  display: none;
+}
+
+@include respond-to("tablet") {
+  .imagenesPrincipalesContainer {
+    display: none;
+  }
+  .imagenesPrincipalesContainerDesktop {
+    display: flex;
+    position: relative;
+    width: 100%;
+    min-height: 40rem;
+    background-image: url("@assets/images/CotizaTusEventosDesktop.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .imagenesPrincipalesContainerRelative{
+      flex: 1;
+    }
+
+    .containerContent{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex: 1;
+      position: relative;
+      margin-left: -25%;
+      .imagenesPrincipalesContainerDesktop__content__title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 130%;
+        color: #fff;
+        text-shadow: 4px 4px 4px 0px #00000066;
+        text-align: center;
+        margin: 0;
+        position: relative;
+        z-index: 2;
+        max-width: 37rem;
+      }
+    }
+  }
+}
