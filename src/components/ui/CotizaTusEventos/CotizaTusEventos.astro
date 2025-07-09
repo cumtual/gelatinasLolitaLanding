@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+
+import CotizaTusEventosImage from '@assets/images/CotizaTusEventos.png';
+import CotizaTusEventosImageDesktop from '@assets/images/CotizaTusEventosDesktop.png';
+import LogoLolitaBlanco from '@/assets/images/LogoLolitaBlanco.png';
+import styles from './index.module.scss';
+import { ButtonOrdenar } from "../Button";
+
+---
+<div class={styles.imagenesPrincipalesContainer}>
+    <Image src={CotizaTusEventosImage} alt="Cotiza tus eventos" />
+</div>
+<div class={styles.imagenesPrincipalesContainerDesktop}>
+        <div class={styles.imagenesPrincipalesContainerRelative}>
+        </div>
+        <div class={styles.containerContent}>
+            <Image src={LogoLolitaBlanco} alt="Logo Lolita" width={248} />
+        <p class={styles.imagenesPrincipalesContainerDesktop__content__title}>Cotiza tus eventos con nosotros</p>
+        <ButtonOrdenar/>
+        </div>
+    </div>
+</div>
