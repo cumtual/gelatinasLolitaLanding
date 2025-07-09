@@ -1,7 +1,7 @@
 ---
 import '@styles/main.scss';
 import { Image } from 'astro:assets';
-import { Header, Fondo, Ubicacion, NuestrosProductos, SeccionFotos, ButtonOrdenar, Footer } from '@components/ui';
+import { Header, Fondo, Ubicacion, NuestrosProductos, SeccionFotos, ButtonOrdenar, Footer, CotizaTusEventos } from '@components/ui';
 import { ChocolateGrosellaImage, VainillaGrosellaImage, VainillaNaranjaImage, VainillaLimonImage, VainillaJerezImage, ChocolateJerezImage } from '@assets/images/gelatinasCombinadas';
 import { GelatinaGrosellaImage, GelatinaNaranjaImage, GelatinaLimonImage, GelatinaJerezImage } from '@assets/images/gelatinasAgua';
 import { GelatinaVainillaImage, GelatinaChocolateImage, GelatinaMelonImage, GelatinaMosaico } from '@assets/images/gelatinasLeche';
@@ -171,9 +171,7 @@ const imagesFlanes = [
 		<div id="GelatinasAgua">
 			<SeccionFotos images={imagesGelatinasAgua} nombre="Gelatinas" texto="de agua" fondo={FondoGelatinasAgua}/>
 		</div>
-		<div class={styles.imagenesPrincipalesContainer}>
-			<Image src={CotizaTusEventosImage} alt="Cotiza tus eventos" />
-		</div>
+		<CotizaTusEventos />
 		<div class={styles.buttonOrdenarContainer}>
 			<ButtonOrdenar />
 		</div>
